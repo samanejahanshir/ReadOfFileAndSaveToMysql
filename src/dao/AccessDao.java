@@ -1,8 +1,11 @@
 package dao;
 
+import models.Course;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 public class AccessDao {
     private Connection connection;

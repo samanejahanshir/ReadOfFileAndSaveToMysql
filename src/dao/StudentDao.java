@@ -18,13 +18,10 @@ public class StudentDao  extends  AccessDao{
                 String sql = String.format("INSERT INTO `student` (`id`,`name`) VALUES (%d,'%s');",
                         student.getId(),student.getName());
                 Statement statement = getConnection().createStatement();
-                int i = statement.executeUpdate(sql);
-                if (i != 0) {
-                    return i;
-                } else {
-                    return -1;
-                }
+                statement.executeUpdate(sql);
+
             }
+            return  1;
         }
         return -1;
     }
