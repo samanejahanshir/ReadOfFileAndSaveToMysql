@@ -6,6 +6,24 @@ public class StudentCourseRating {
     private  int idCourse;
     private  double ratting;
     private  String command;
+    private String timeStamp;
+
+    public StudentCourseRating(int id, int idStudent, int idCourse, double ratting, String command, String timeStamp) {
+        this.id = id;
+        this.idStudent = idStudent;
+        this.idCourse = idCourse;
+        this.ratting = ratting;
+        this.command = command;
+        this.timeStamp = timeStamp;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 
     public int getId() {
         return id;
@@ -45,5 +63,17 @@ public class StudentCourseRating {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentCourseRating{" +
+                "id=" + id +
+                ", idStudent=" + idStudent +
+                ", idCourse=" + idCourse +
+                ", ratting=" + ratting +
+                ", command='" + command + '\'' +
+                ", timeStamp='" + timeStamp + '\'' +
+                '}';
     }
 }
