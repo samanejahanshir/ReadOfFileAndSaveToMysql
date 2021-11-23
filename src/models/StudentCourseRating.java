@@ -6,24 +6,16 @@ public class StudentCourseRating {
     private  int idCourse;
     private  double ratting;
     private  String command;
-    private String timeStamp;
 
-    public StudentCourseRating(int id, int idStudent, int idCourse, double ratting, String command, String timeStamp) {
+    public StudentCourseRating(int id, int idStudent, int idCourse, double ratting, String command) {
         this.id = id;
         this.idStudent = idStudent;
         this.idCourse = idCourse;
         this.ratting = ratting;
         this.command = command;
-        this.timeStamp = timeStamp;
     }
 
-    public String getTimeStamp() {
-        return timeStamp;
-    }
 
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
-    }
 
     public int getId() {
         return id;
@@ -73,7 +65,6 @@ public class StudentCourseRating {
                 ", idCourse=" + idCourse +
                 ", ratting=" + ratting +
                 ", command='" + command + '\'' +
-                ", timeStamp='" + timeStamp + '\'' +
                 '}';
     }
 }
