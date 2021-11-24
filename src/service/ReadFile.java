@@ -42,9 +42,12 @@ public class ReadFile {
             indexStudent++;
         }
         if (saveDataStudent(studentList) != -1 && saveDataCourse(courseList) != -1 && saveDataRatting(ratingList) != -1) {
+            reader.close();
             return true;
-        } else
+        } else {
+            reader.close();
             return false;
+        }
     }
 
     public int saveDataStudent(Set<Student> studentList) {
@@ -53,7 +56,7 @@ public class ReadFile {
             studentDao = new StudentDao();
             isAdd = studentDao.setAll(studentList);
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
+            System.out.println( ex.getMessage());
         }
         return isAdd;
     }
@@ -64,7 +67,7 @@ public class ReadFile {
             courseDao = new CourseDao();
             isAdd = courseDao.setAll(courseList);
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
+            System.out.println( ex.getMessage());
         }
         return isAdd;
     }
@@ -75,7 +78,7 @@ public class ReadFile {
             rattingDao = new StudentCourseRatingDao();
             isAdd = rattingDao.setAll(ratingList);
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
+            System.out.println( ex.getMessage());
         }
         return isAdd;
     }
